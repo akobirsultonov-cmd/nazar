@@ -1,0 +1,12 @@
+workflows:
+  ios-workflow:
+    name: SmartAlarm Build
+    instance_type: mac_mini_m2
+    environment:
+      xcode: latest
+    scripts:
+      - name: Build check
+        script: |
+          xcodebuild -list
+    artifacts:
+      - "**/*.ipa"
